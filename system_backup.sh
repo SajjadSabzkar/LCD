@@ -22,7 +22,7 @@ sudo mkdir -p ./.system_backup/xorg.conf.d
 sudo rm -rf /etc/X11/xorg.conf.d
 fi
 
-result=`grep -rn "^dtoverlay=" /boot/config.txt | grep ":rotate=" | tail -n 1`
+result=`grep -rn "^dtoverlay=" /boot/firmware/config.txt | grep ":rotate=" | tail -n 1`
 if [ $? -eq 0 ]; then
 str=`echo -n $result | awk -F: '{printf $2}' | awk -F= '{printf $NF}'`
 if [ -f /boot/overlays/$str-overlay.dtb ]; then

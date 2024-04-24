@@ -18,7 +18,7 @@ sudo cp -rf ./.system_backup/40-libinput.conf /etc/X11/xorg.conf.d
 fi
 fi
 
-result=`grep -rn "^dtoverlay=" /boot/config.txt | grep ":rotate=" | tail -n 1`
+result=`grep -rn "^dtoverlay=" /boot/firmware/config.txt | grep ":rotate=" | tail -n 1`
 if [ $? -eq 0 ]; then
 str=`echo -n $result | awk -F: '{printf $2}' | awk -F= '{printf $NF}'`
 sudo rm -rf /boot/overlays/$str-overlay.dtb

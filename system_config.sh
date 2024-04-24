@@ -18,7 +18,7 @@ fi
 
 sudo raspi-config nonint do_wayland W1
 if [ -f /boot/firmware/config.txt ]; then
-sudo ln -sf /boot/firmware/config.txt /boot/config.txt
+#sudo ln -sf /boot/firmware/config.txt /boot/config.txt
 fi
 
 if [ $hardware_arch -eq 32 ]; then
